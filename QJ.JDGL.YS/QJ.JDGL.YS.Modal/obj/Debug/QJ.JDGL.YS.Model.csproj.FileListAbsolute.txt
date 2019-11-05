@@ -1,0 +1,6 @@
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\bin\Debug\QJ.JDGL.YS.Modal.dll
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\bin\Debug\QJ.JDGL.YS.Modal.pdb
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\obj\Debug\QJ.JDGL.YS.Model.csproj.CoreCompileInputs.cache
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\obj\Debug\QJ.JDGL.YS.Modal.dll
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\obj\Debug\QJ.JDGL.YS.Modal.pdb
+C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.Modal\obj\Debug\QJ.JDGL.YS.Model.csprojAssemblyReference.cache
