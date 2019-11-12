@@ -19,16 +19,15 @@ create table UserInfo
 (
 UserID int primary key identity(1,1),--用户编号 
 UserName varchar(20)not null,--登录名
-UserPwd int not null,--密码
+UserPwd varchar(20) not null,--密码
 UserCard int--身份 1 老板 2经理 3员工
 )
 go
 --插入员工，管理层登录信息
-insert into UserInfo values('张飒',1234,1)
-insert into UserInfo values('李信',1234,2)
-insert into UserInfo values('张三',1234,3)
-insert into UserInfo values('李四',1234,3)
-
+insert into UserInfo values('admin','admin',1)
+insert into UserInfo values('123456','123456',2)
+insert into UserInfo values('999999','999999',3)
+go
 
 if exists (select * from sys.tables where name='CustomInfo')
 drop table CustomInfo
@@ -39,8 +38,8 @@ create table CustomInfo
 CusID int primary key identity(1,1),-- 顾客编号 主键 
 CusName varchar(20)not null,--顾客姓名
 CusSex char(2) not null,--顾客性别
-CusPhone int not null,-- 顾客手机号
-CusBodyId int not null--顾客身份证号
+CusPhone varchar(20) not null,-- 顾客手机号
+CusBodyId varchar(20) not null--顾客身份证号
 )
 go
 --插入顾客信息
@@ -48,7 +47,7 @@ insert into CustomInfo values('大白','男',12345678901,411481199001026243)
 insert into CustomInfo values('小白','男',12345678902,411481199601026243)
 insert into CustomInfo values('肖思','女',12345678903,411481199901026243)
 insert into CustomInfo values('赵新','男',12345678904,411481199003026243)
-
+go
 select * from CustomInfo
 
 
@@ -58,20 +57,21 @@ go
 --创建员工信息表
 create table StaffInfo
 (
-StaID int primary key identity(1,101),--员工编号 主键 
+StaID int primary key identity(1,101),--员工编号 主键
+UserID int not null references UserInfo(UserID),--登录编号 外键
 StaName varchar(20)not null,-- 员工姓名
 StaSex char(2) not null,-- 员工性别
-StaPhone int not null,--员工手机号
-StaCard int not null,--员工身份证号
+StaPhone varchar(20) not null,--员工手机号
+StaCard varchar(20) not null,--员工身份证号
 IsWork bit--员工是否在岗
 )
 go
 --插入员工信息
-insert into StaffInfo values('周政','男',12345678101,411481199001026243,1)
-insert into StaffInfo values('陆河','男',12345678202,411481199601026243,1)
-insert into StaffInfo values('李思','女',12345678303,411481199901026243,1)
-insert into StaffInfo values('赵羽','男',12345678404,411481199003026243,0)
-
+insert into StaffInfo values(1,'周政','男',12345678101,411481199001026243,1)
+insert into StaffInfo values(2,'陆河','男',12345678202,411481199601026243,1)
+insert into StaffInfo values(3,'李思','女',12345678303,411481199901026243,1)
+insert into StaffInfo values(3,'赵羽','男',12345678404,411481199003026243,0)
+go
 select * from StaffInfo
 
 
@@ -85,14 +85,14 @@ ManID int primary key identity(1,101),--编号 主键
 ManName varchar(20)not null,--  姓名
 ManSex char(2) not null,-- 性别
 ManCard  int,-- 0 经理，1 老板
-ManPhone int not null--手机号  
+ManPhone varchar(20) not null--手机号  
 )
 go
 --插入管理人员信息
-insert into ManagerInfo values('张飒','男',12345678888,1)
-insert into ManagerInfo values('李信','男',12345678666,0)
-insert into ManagerInfo values('刘岚','女',12345678668,0)
-
+insert into ManagerInfo values('张飒','男',1,12345678888)
+insert into ManagerInfo values('李信','男',0,12345678666)
+insert into ManagerInfo values('刘岚','女',0,12345678668)
+go
 select * from ManagerInfo 
 
 
@@ -107,20 +107,20 @@ RooType varchar(20) not null--房间类型
 )
 go
 --插入房间类型
-insert into RoomType values('标间')
-insert into RoomType values('商务套房')
-insert into RoomType values('豪华房间')
+insert into RoomType values('标准间')
+insert into RoomType values('双人间')
+insert into RoomType values('豪华套房')
 
 select * from RoomType 
 
 
-if exists (select * from sys.tables where name='RoomInfo  ')
+if exists (select * from sys.tables where name='RoomInfo')
 drop table RoomInfo  
 go
 --创建房间信息表
 create table RoomInfo  
 (
-RooID int primary key identity(1,1001), --房间编号 主键 
+RooID int primary key identity(1001,1), --房间编号 主键 
 RTypeID int not null references RoomType(RTypeID),--类型编号 外键
 Rooname varchar(50)not null,--房间名称
 RooPrice money not null,-- 房间价格
@@ -128,12 +128,12 @@ IsRoo bit-- 是否已有顾客
 )
 go
 --插入房间信息
-insert into RoomInfo values(1,101,200,0)
-insert into RoomInfo values(2,201,400,0)
-insert into RoomInfo values(2,202,400,0)
-insert into RoomInfo values(3,301,888,0)
+insert into RoomInfo values(1,101,168,0)
+insert into RoomInfo values(1,201,168,0)
+insert into RoomInfo values(2,202,200,0)
+insert into RoomInfo values(2,203,200,0)
 insert into RoomInfo values(3,302,888,0)
-
+go
 select * from RoomInfo  
 
 
@@ -233,6 +233,22 @@ insert into StatisticalInfo values(5,1000,'2019-11-4')
 
 select * from StatisticalInfo   
 
+--投诉信息表
+if exists(select * from sys.tables where name='tousu')
+drop table tousu
+go
+create table tousu
+(
+	touid int primary key identity(1,1),
+	touname varchar(20)not null,
+	toufang int not null,
+	toudui varchar(20)not null,
+	touliyou varchar(500)not null
+)
+insert into tousu values('大白','1002','张三','她瞪我')
+select * from tousu
+
+
 if exists (select * from sys.procedures where name='UserInfo_selID')
 drop proc UserInfo_selID
 go
@@ -245,3 +261,5 @@ go
 exec UserInfo_selID 1,'张飒',1234
 
 select * from UserInfo where UserName like '%张%'
+
+

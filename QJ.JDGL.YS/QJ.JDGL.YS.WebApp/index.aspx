@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -12,9 +12,49 @@
     <link href="css/matrix-style.css" rel="stylesheet" />
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/matrix.js"></script>
+    <style type="text/css">
+        .all{
+            background-color:white;
+            margin-bottom: -25px;
+            padding: 50px 60px 15px 105px;
+        }
+        .center {
+            width: 1285px;
+        }
+
+        .left_img {
+            width: 1000px;
+            float: left;
+            padding-top: 11px;
+            padding-right:10px;
+        }
+
+        .right_top {
+            border: 1px solid #DCEBFF;
+            margin-top: 10px;
+            padding: 10px 20px 0;
+            background-color: #f7faff;
+            width: 220px;
+            height: 255px;
+            float: left;
+        }
+
+        .small {
+            width: 163px;
+            height: 80px;
+        }
+
+        .right_size {
+            margin-right: 10px;
+            font-size: 22px;
+            color: #2676e3;
+            font-weight: bold;
+        }
+
+        .bottom {
+            width: 1265px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +64,8 @@
             </div>
             <div id="user-nav" class="navbar navbar-inverse">
                 <ul class="nav">
-                    <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i><span class="text">欢迎Admin</span><b class="caret"></b></a>
+                    <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><i class="icon-user"></i>我的资料</a></li>
                             <li class="divider"></li>
@@ -55,45 +96,82 @@
             <div id="sidebar">
                 <a href="#" class="visible-phone"><i class="icon icon-list"></i>Forms</a>
                 <ul>
-                    <%--<li class="active"><a href="index.html"><i class="icon icon-home"></i><span>首页</span></a> </li>--%>
                     <li class="submenu active"><a href="#"><i class="icon icon-signal"></i><span>房间信息</span></a>
+                        <ul>
+                            <li><a href="#">标准间</a></li>
+                            <li><a href="#">双人间</a></li>
+                            <li><a href="#">豪华套房</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu"><a href="#"><i class="icon icon-inbox"></i><span>住房服务</span></a>
                         <ul>
                             <li><a href="#">未住宿房间信息</a></li>
                             <li><a href="#">已住宿房间信息</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="icon icon-inbox"></i><span>住房服务</span></a> </li>
                     <li><a href="#"><i class="icon icon-th"></i><span>物品报修</span></a></li>
-                    <li><a href="#"><i class="icon icon-fullscreen"></i><span>投诉中心</span></a></li>
+                    <li><a href="tousu.aspx"><i class="icon icon-fullscreen"></i><span>投诉中心</span></a></li>
                     <li><a href="#"><i class="icon icon-th-list"></i><span>结账信息</span></a></li>
                     <li><a href="#"><i class="icon icon-tint"></i><span>员工管理</span></a></li>
                     <li><a href="#"><i class="icon icon-pencil"></i><span>账单信息</span></a></li>
-                    <%--<li class="submenu"><a href="#"><i class="icon icon-file"></i><span>其他</span> </a>
-                        <ul>
-                            <li><a href="#">首页</a></li>
-                            <li><a href="#">相册</a></li>
-                            <li><a href="#">日历</a></li>
-                            <li><a href="#">清单</a></li>
-                            <li><a href="#">聊天</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu"><a href="#"><i class="icon icon-info-sign"></i><span>错误页面</span> </a>
-                        <ul>
-                            <li><a href="#">403错误页面</a></li>
-                            <li><a href="#">404错误页面</a></li>
-                            <li><a href="#">405错误页面</a></li>
-                            <li><a href="#">500错误页面</a></li>
-                        </ul>
-                    </li>--%>
                 </ul>
             </div>
             <div id="content">
                 <div id="content-header">
-                    <div id="breadcrumb"><a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a> <a href="#">Form elements</a> <a href="#" class="current">Validation</a> </div>
-
+                    <div id="breadcrumb">
+                        <a href="index.html" title="Go to Home" class="tip-bottom">
+                            <i class="icon-home"></i>房间信息</a>
+                    </div>
+                    <div class="all">
+                        <div class="center">
+                            <span style="font-size: 26px;"><b>七瑾国际酒店</b></span>
+                            <span style="margin-left: 10px; color: #999; font-size: 18px;">Qijin International Hotel</span><br />
+                            <span style="margin-top: 14px;">地理位置：航海东路与经开第二十二大街交叉口路北</span>
+                            <div class="left_img">
+                                <div>
+                                    <img class="big" src="img/jpg/首图1.jpg" style="height: 400px; width: 996px;" />
+                                </div>
+                                <div>
+                                    <img class="small" src="img/jpg/首图1.jpg" />
+                                    <img class="small" src="img/jpg/首图2.jpg" />
+                                    <img class="small" src="img/jpg/首图3.jpg" />
+                                    <img class="small" src="img/jpg/首图4.jpg" />
+                                    <img class="small" src="img/jpg/首图5.jpg" />
+                                    <img class="small" src="img/jpg/首图6.jpg" />
+                                </div>
+                            </div>
+                            <div class="right_top">
+                                <span class="right_size"><b>超棒 4.6</b></span><span>/5分</span><br />
+                                <br />
+                                <span style="color: #2676e3">3833</span>条住客点评，<span style="color: #2676e3">97%</span><span>用户推荐</span><br />
+                                <br />
+                                <span>“七瑾国际酒店作为郑州大型综合商业项目的重要组成部分，今年国庆长假选择通过携程订在座落于郑州的HYATT REGENCY。环境优雅服务热情。”</span>
+                            </div>
+                            <div>
+                                <img src="img/jpg/地图.png" style="margin-top: 15px; width: 260px;" />
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h2 style="color: #2676e3; margin: 30px 20px 20px 100px;">酒店设施</h2>
+                            <img src="img/jpg/信息.png" style="margin-left: 100px;" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            var big = document.getElementsByClassName("big")[0];
+            var smalls = document.getElementsByClassName("small");
+            for (var i = 0; i < smalls.length; i++) {
+                smalls[i].onmouseover = function () {
+                    big.src = this.src;
+                }
+            }
+            console.log("a");
+        </script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/matrix.js"></script>
     </form>
 </body>
 </html>

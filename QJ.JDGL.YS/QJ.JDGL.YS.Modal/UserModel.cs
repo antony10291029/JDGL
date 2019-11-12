@@ -19,7 +19,7 @@ namespace QJ.JDGL.YS.Modal
         /// <summary>
         /// 密码
         /// </summary>
-        public int UserPwd { get; set; }
+        public string UserPwd { get; set; }
         /// <summary>
         /// 身份 1 老板 2经理 3员工
         /// </summary>
