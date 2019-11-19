@@ -10,5 +10,9 @@ namespace QJ.JDGL.YS.Modal
     {
         public int RTypeID { get; set; }
         public string RooType { get; set; }
+        public int NumID { get; set; }
+        public string RooNum { get; set; }
+        public int RightID { get; set; }
+        public string RooRight { get; set; }
     }
 }

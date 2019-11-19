@@ -20,7 +20,7 @@
     <form id="form1" runat="server">
         <div>
             <div id="header">
-                <h1><a href="dashboard.html">MatAdmin</a></h1>
+                <h1>七瑾国际酒店</h1>
             </div>
             <div id="user-nav" class="navbar navbar-inverse">
                 <ul class="nav">

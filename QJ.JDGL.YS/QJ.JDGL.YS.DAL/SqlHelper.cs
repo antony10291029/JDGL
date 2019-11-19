@@ -61,5 +61,75 @@ namespace QJ.JDGL.YS.DAL
                 }
             }
         }
+
+        //执行查询
+        public static DataTable DBQuery(string proName, SqlParameter[] sqlParams = null)
+        {
+            DataTable table = new DataTable();
+            SqlConnection Conn = new SqlConnection(str);
+            SqlCommand Comm = new SqlCommand(proName, Conn);
+            Comm.CommandType = CommandType.StoredProcedure;
+            if (sqlParams != null)
+                Comm.Parameters.AddRange(sqlParams);
+            SqlDataAdapter sda = new SqlDataAdapter(Comm);
+            sda.Fill(table);
+            return table;
+        }
+        //执行非查询
+        public static int DBNoQuery(string proName, SqlParameter[] sqlParams = null)
+        {
+            int num = 0;
+            SqlConnection Conn = new SqlConnection(str);
+            SqlCommand Comm = new SqlCommand(proName, Conn);
+            Comm.CommandType = CommandType.StoredProcedure;
+            if (sqlParams != null)
+                Comm.Parameters.AddRange(sqlParams);
+            try
+            {
+                Conn.Open();
+                num = Comm.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (Conn.State == ConnectionState.Open)
+                {
+                    Conn.Close();
+                }
+            }
+            return num;
+        }
+        //查询存储过程
+        public static SqlDataReader ProcQueryReader(string sql, params SqlParameter[] sqlp)
+        {
+            SqlConnection sqlconn = new SqlConnection(str);
+            using (SqlCommand sqlcomm = new SqlCommand(sql, sqlconn))
+            {
+                if (sqlconn.State == ConnectionState.Closed)
+                {
+                    sqlconn.Open();
+                }
+                sqlcomm.CommandType = CommandType.StoredProcedure;
+                sqlcomm.Parameters.AddRange(sqlp);
+                return sqlcomm.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+        }
+        //非查询存储过程
+        public static int ProcNoQuery(string sql, params SqlParameter[] sqlp)
+        {
+            using (SqlConnection sqlconn = new SqlConnection(str))
+            {
+                using (SqlCommand sqlcomm = new SqlCommand(sql, sqlconn))
+                {
+                    if (sqlconn.State == ConnectionState.Closed)
+                    {
+                        sqlconn.Open();
+                    }
+                    sqlcomm.CommandType = CommandType.StoredProcedure;
+                    sqlcomm.Parameters.AddRange(sqlp);
+                    return sqlcomm.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

@@ -187,10 +187,10 @@ textarea {
 
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;*/
     line-height: 20px;
-    color: #333;
+    /*color: #333;*/
     background-color: #fff
 }
 
@@ -241,11 +241,11 @@ a {
         clear: both
     }
 
-[class*="span"] {
+/*[class*="span"] {
     float: left;
     min-height: 1px;
     margin-left: 20px
-}
+}*/
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 940px
@@ -602,9 +602,9 @@ a {
         clear: both
     }
 
-p {
+/*p {
     margin: 0 0 10px
-}
+}*/
 
 .lead {
     margin-bottom: 20px;
@@ -1033,7 +1033,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
     }
 
 input[type="radio"], input[type="checkbox"] {
-    margin: 4px 0 0;
+    margin: 4px 15px 0;
     margin-top: 1px \9;
     *margin-top: 0;
     line-height: normal
@@ -1644,12 +1644,12 @@ legend + .control-group {
     padding-left: 180px
 }
 
-table {
+/*table {
     max-width: 100%;
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0
-}
+}*/
 
 .table {
     width: 100%;

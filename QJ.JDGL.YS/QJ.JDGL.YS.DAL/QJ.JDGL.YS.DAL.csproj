@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CumrooInfoDAL.cs" />
     <Compile Include="LBH-DAL.cs" />
     <Compile Include="RoomInfoDAL.cs" />
     <Compile Include="RoomTypeDAL.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StaffDAL.cs" />
+    <Compile Include="StaffInfoDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

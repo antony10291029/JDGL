@@ -33,5 +33,29 @@ namespace QJ.JDGL.YS.BLL
         {
             return dal.gettousu();
         }
+        public List<baoxiuModel> getbaoxiu()
+        {
+            return dal.getbaoxiu();
+        }
+        public baoxiuModel getbaoxiu(int baoid)
+        {
+            return dal.getbaoxiu(baoid);
+        }
+            public int delete(int touid)
+        {
+            return dal.delete(touid);
+        }
+        public int deletebao(int baoid)
+        {
+            return dal.deletebao(baoid);
+        }
+        public int insbaoxiu(baoxiuModel model)
+        {
+            return dal.insbaoxiu(model);
+        }
+        public int update(int baoid )
+        {
+            return dal.update(baoid);
+        }
     }
 }

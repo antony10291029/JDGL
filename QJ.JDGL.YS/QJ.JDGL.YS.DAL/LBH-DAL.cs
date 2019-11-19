@@ -69,6 +69,7 @@ namespace QJ.JDGL.YS.DAL
                     model.StaPhone = reader["StaPhone"].ToString();
                     model.StaCard = reader["StaCard"].ToString();
                     model.IsWork = Convert.ToBoolean(reader["IsWork"]);
+
                     users.Add(model);
                 }
             }
@@ -95,13 +96,40 @@ namespace QJ.JDGL.YS.DAL
             }
             return users;
         }
-        public int addUser(tousuModel model)
+        public List<baoxiuModel> getbaoxiu()
+        {
+            string sql = "select * from [JDGL].[dbo].[baoxiu]";
+            SqlDataReader reader = SqlHelper.QueryReader(sql);
+            List<baoxiuModel> users = new List<baoxiuModel>();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    baoxiuModel model = new baoxiuModel();
+                    model.baoid = Convert.ToInt32(reader["baoid"]);
+                    model.baoname = reader["baoname"].ToString();
+                    model.baofang = Convert.ToInt32(reader["baofang"]);
+                    model.wupin = reader["wupin"].ToString();
+                    model.shijian = reader["shijian"].ToString();
+                    model.ischuli = Convert.ToInt32(reader["ischuli"]);
+                    model.chushijian =reader["chushijian"].ToString();
+                    users.Add(model);
+                }
+            }
+            return users;
+        }
+        public baoxiuModel getbaoxiu(int baoid)
+        {
+            LBH_DAL lb = new LBH_DAL();
+            return lb.getbaoxiu().FirstOrDefault(p=>p.baoid==baoid);
+        }
+            public int addUser(tousuModel model)
         {
             string sql = @"insert into [JDGL].[dbo].[tousu](touname,toufang,toudui,touliyou) values (@touname,@toufang,@toudui,@touliyou)";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@touname", model.touname));
             parameters.Add(new SqlParameter("@toufang", model.toufang));
-            parameters.Add(new SqlParameter("@toudui", model.toudui));
+             parameters.Add(new SqlParameter("@toudui", model.toudui));
             parameters.Add(new SqlParameter("@touliyou", model.touliyou));
             //string sqlExist = "select UserID from [Test].[dbo].[UserInfo] where username=@name and isdelete=0";
             //SqlParameter[] sqlp = new SqlParameter[1];
@@ -115,6 +143,53 @@ namespace QJ.JDGL.YS.DAL
             //}
             result = SqlHelper.NoQuery(sql, parameters.ToArray());
             return result;
+        }
+        public int delete(int touid)
+        {
+            string sql = @"delete [JDGL].[dbo].[tousu] where touid=@touid";
+            SqlParameter[] sqlp = new SqlParameter[1];
+            sqlp[0] = new SqlParameter("@touid", touid);
+            int result = SqlHelper.NoQuery(sql, sqlp);
+            return (result);
+        }
+        public int deletebao(int baoid)
+        {
+            string sql = @"delete [JDGL].[dbo].[baoxiu] where baoid=@baoid";
+            SqlParameter[] sqlp = new SqlParameter[1];
+            sqlp[0] = new SqlParameter("@baoid", baoid);
+            int result = SqlHelper.NoQuery(sql, sqlp);
+            return (result);
+        }
+
+        public int insbaoxiu(baoxiuModel model)
+        {
+            string sql = @"insert into [JDGL].[dbo].[baoxiu](baoname,baofang,wupin,shijian,ischuli,chushijian) values (@baoname,@baofang,@wupin,@shijian,@ischuli,null)";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@baoname", model.baoname));
+            parameters.Add(new SqlParameter("@baofang", model.baofang));
+            parameters.Add(new SqlParameter("@wupin", model.wupin));
+            parameters.Add(new SqlParameter("@shijian", model.shijian));
+            parameters.Add(new SqlParameter("@ischuli", model.ischuli));
+            //string sqlExist = "select UserID from [Test].[dbo].[UserInfo] where username=@name and isdelete=0";
+            //SqlParameter[] sqlp = new SqlParameter[1];
+            //sqlp[0] = new SqlParameter("@touname", model.username);
+            //object obj = SqlHelper.NoQuery(sqlExist, sqlp);
+            int result = 0;
+            //if (obj != null)
+            //{
+            //    result = 100;
+            //    return result;
+            //}
+            result = SqlHelper.NoQuery(sql, parameters.ToArray());
+            return result;
+        }
+        public int update(int baoid)
+        {
+            string sql = @"update [JDGL].[dbo].[baoxiu] set ischuli=1,chushijian=getdate() where baoid=@baoid";
+            SqlParameter[] sqlp = new SqlParameter[1];
+            sqlp[0] = new SqlParameter("@baoid", baoid);
+            int result = SqlHelper.NoQuery(sql, sqlp);
+            return (result);
         }
     }
 }

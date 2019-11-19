@@ -14,5 +14,7 @@ namespace QJ.JDGL.YS.Modal
         public int RooPrice { get; set; }
         public bool IsRoo { get; set; }
         public string RooType { get; set; }
+        public int NumID { get; set; }
+        public int RightID { get; set; }
     }
 }

@@ -40,7 +40,7 @@
         }
 
         .small {
-            width: 163px;
+            width: 162px;
             height: 80px;
         }
 
@@ -60,7 +60,7 @@
     <form id="form1" runat="server">
         <div>
             <div id="header">
-                <h1><a href="dashboard.html">MatAdmin</a></h1>
+                <h1>七瑾国际酒店</h1>
             </div>
             <div id="user-nav" class="navbar navbar-inverse">
                 <ul class="nav">
@@ -96,11 +96,11 @@
             <div id="sidebar">
                 <a href="#" class="visible-phone"><i class="icon icon-list"></i>Forms</a>
                 <ul>
-                    <li class="submenu active"><a href="#"><i class="icon icon-signal"></i><span>房间信息</span></a>
+                    <li class="submenu active"><a href="index.aspx"><i class="icon icon-signal"></i><span>房间信息</span></a>
                         <ul>
-                            <li><a href="#">标准间</a></li>
-                            <li><a href="#">双人间</a></li>
-                            <li><a href="#">豪华套房</a></li>
+                            <li><a href="OneRoom.aspx">标准间</a></li>
+                            <li><a href="TwoRoom.aspx">双人间</a></li>
+                            <li><a href="HaohuaRoom.aspx">豪华套房</a></li>
                         </ul>
                     </li>
                     <li class="submenu"><a href="#"><i class="icon icon-inbox"></i><span>住房服务</span></a>
@@ -109,18 +109,28 @@
                             <li><a href="#">已住宿房间信息</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="icon icon-th"></i><span>物品报修</span></a></li>
-                    <li><a href="tousu.aspx"><i class="icon icon-fullscreen"></i><span>投诉中心</span></a></li>
+                    <li class="submenu"><a href="#"><i class="icon icon-th"></i><span>物品报修</span></a>
+                        <ul>
+                            <li><a href="insbaoxiu.aspx">添加报修信息</a></li>
+                            <li><a href="#">查看报修信息</a></li>
+                        </ul>
+                    </li>
+                    <li  class="submenu"><a href="tousu.aspx"><i class="icon icon-fullscreen"></i><span>投诉中心</span></a>
+                        <ul>
+                            <li><a href="tousu.aspx">添加投诉信息</a></li>
+                            <li><a href="seltousu.aspx">查看投诉信息</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#"><i class="icon icon-th-list"></i><span>结账信息</span></a></li>
-                    <li><a href="#"><i class="icon icon-tint"></i><span>员工管理</span></a></li>
+               <li><a href="StaffInfo.aspx"><i class="icon icon-tint"></i><span>员工管理</span></a></li>
                     <li><a href="#"><i class="icon icon-pencil"></i><span>账单信息</span></a></li>
                 </ul>
             </div>
             <div id="content">
                 <div id="content-header">
                     <div id="breadcrumb">
-                        <a href="index.html" title="Go to Home" class="tip-bottom">
-                            <i class="icon-home"></i>房间信息</a>
+                        <a href="index.aspx" title="返回房间信息" class="tip-bottom">
+                            <i class="icon-home"></i>房间信息</a> 
                     </div>
                     <div class="all">
                         <div class="center">

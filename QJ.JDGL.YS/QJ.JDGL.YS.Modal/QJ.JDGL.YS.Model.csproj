@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baoxiuModel.cs" />
+    <Compile Include="BillInfoModel.cs" />
+    <Compile Include="CumrooInfoModel.cs" />
     <Compile Include="CustomInfoModel.cs" />
+    <Compile Include="ManagerInfoModel.cs" />
     <Compile Include="RoomInfoModel.cs" />
     <Compile Include="RoomTypeModel.cs" />
     <Compile Include="StaffModel.cs" />

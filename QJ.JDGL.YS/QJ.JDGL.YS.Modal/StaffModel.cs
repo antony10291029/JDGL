@@ -17,5 +17,40 @@ namespace QJ.JDGL.YS.Modal
         public string UserPwd { get; set; }
         public int UserCard { get; set; }
         public int UserID { get; set; }
+
+
+        public string UserName { get; set; }
+
+        public string UserCardStr
+        {
+            get
+            {
+                if (UserCard == 1) { return "老板"; }
+                if (UserCard == 2) { return "经理"; }
+                if (UserCard == 3) { return "员工"; }
+                return "";
+            }
+            set { }
+        }
+
+        public string isworkstring
+        {
+            get
+            {
+                if (IsWork == true)
+                {
+                    return "是";
+                }
+                if (IsWork == false)
+                {
+                    return "否";
+                }
+                return "";
+            }
+            set
+            {
+
+            }
+        }
     }
 }

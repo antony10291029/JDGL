@@ -17,7 +17,7 @@
         <form id="loginform" class="form-vertical" runat="server">
             <div class="control-group normal_text">
                 <h3>
-                    <img src="img/logo.png" alt="Logo" /></h3>
+                    七瑾国际酒店</h3>
             </div>
             <div class="control-group">
                 <div class="controls">

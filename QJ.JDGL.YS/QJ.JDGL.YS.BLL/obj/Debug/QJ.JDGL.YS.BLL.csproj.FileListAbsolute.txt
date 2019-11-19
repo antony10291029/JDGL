@@ -9,3 +9,14 @@ C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.c
 C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.csproj.CopyComplete
 C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.dll
 C:\Users\q'q\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.pdb
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.BLL.dll
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.BLL.pdb
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.DAL.dll
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.Modal.dll
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.DAL.pdb
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\bin\Debug\QJ.JDGL.YS.Modal.pdb
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.csprojAssemblyReference.cache
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.csproj.CoreCompileInputs.cache
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.csproj.CopyComplete
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.dll
+C:\Users\GXB\Desktop\项目\QJ.JDGL.YS\QJ.JDGL.YS.BLL\obj\Debug\QJ.JDGL.YS.BLL.pdb

@@ -22,7 +22,7 @@ namespace QJ.JDGL.YS.WebApp
         {
             string phone = TextBox1.Text;
             StaffModel model =StaffBLL.GetStaffPwd(phone);
-            if (model == null)
+            if (model.UserPwd == null)
             {
                 Label1.Visible=true;
             }

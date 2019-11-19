@@ -21,21 +21,7 @@
             display: inline-block;
         }
     </style>--%>
-    <style type="text/css">
-       .box{width: 800px;height: 467px;overflow: hidden;position: relative;}
-.box-1 ul li img{display:block;width: 800px; height: 450px;margin-left: -45px;}
-.box-2{position: absolute;right: 10px;bottom: 14px;}
-.box-2 ul li{float:left;width: 12px;height: 12px;overflow: hidden; margin: 0 5px; border-radius: 50%;
-				background: rgba(0,0,0,0.5);text-indent: 100px;cursor: pointer;}
-.box-2 ul .on{background: rgba(255,255,255,0.6);}
-.box-3 span{position: absolute;color: white;background: rgba(125,125,120,.3);width: 50px;height: 80px;
-				top:50%; font-family: "宋体";line-height: 80px;font-size:60px;margin-top: -40px;
-				text-align: center;cursor: pointer;}
-.box-3 .prev{left: 7px;}
-.box-3 .next{right: 10px;}
-.box-3 span::selection{background: transparent;}
-.box-3 span:hover{background: rgba(125,125,120,.8);}
-    </style>
+    <link href="css/roomstyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -67,35 +53,230 @@
                     </FooterTemplate>
                 </asp:Repeater>--%>
         <div class="all">
-            <div class="box">
-                <div class="box-1">
-                    <ul>
-                        <li>
-                            <img src="img/jpg/大床房1.jpg" />
-                        </li>
-                        <li>
-                            <img src="img/jpg/大床房2.jpg" />
-                        </li>
-                        <li>
-                            <img src="img/jpg/大床房3.jpg" />
-                        </li>
-                        <li>
-                            <img src="img/jpg/大床房4.jpg" />
-                        </li>
-                    </ul>
-                </div>
-                <div class="box-2">
-                    <ul>
-                    </ul>
-                </div>
-                <div class="box-3">
-                    <span class="prev">< </span>
-                    <span class="next">> </span>
+            <div class="top">
+                <div class="col1 col"></div>
+                <div class="col2 col">床型</div>
+                <div class="col2 col">早餐</div>
+                <div class="col2 col">人数上限</div>
+                <div class="col3 col">取消政策</div>
+                <div class="col4 col">服务指标</div>
+                <div class="col5 col">均价</div>
+            </div>
+            <div class="left">
+                <div class="box">
+                    <div class="box-1">
+                        <ul>
+                            <li>
+                                <img src="img/jpg/大床房1.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/jpg/大床房2.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/jpg/大床房3.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/jpg/大床房4.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-2">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="box-3">
+                        <span class="prev">< </span>
+                        <span class="next">> </span>
+                    </div>
                 </div>
             </div>
+            <div class="right">
+                <h2 style="margin-bottom: 10px">七瑾大床房</h2>
+                <div class="right_info">
+                    <dl style="display: inline-block;">
+                        <dt>建筑面积</dt>
+                        <dd>40平方米</dd>
+                    </dl>
+                    <dl style="display: inline-block; margin-left: 35px">
+                        <dt>楼层</dt>
+                        <dd>1-6层</dd>
+                    </dl>
+                </div>
+                <div class="right_info">
+                    <dl style="display: inline-block;">
+                        <dt>床型</dt>
+                        <dd style="margin-left: 25px;">1张 大床1.8米</dd>
+                    </dl>
+                </div>
+                <div class="right_info">
+                    <dl style="display: inline-block;">
+                        <dt>可加床</dt>
+                        <dd style="margin-left: 10px;">不可加床</dd>
+                    </dl>
+                </div>
+            </div>
+            <table class="bottom_info" border="0">
+                <tbody>
+                    <tr>
+                        <td class="col1 col">
+                            <p>(旗舰店)</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>大床</p>
+                        </td>
+                        <td class="col2 col">
+                            <p style="color: #10a200;">每天单早</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>1人入住</p>
+                        </td>
+                        <td class="col3 col">
+                            <p>不可取消</p>
+                        </td>
+                        <td class="col4 col">
+                            <p>立即确认</p>
+                        </td>
+                        <td class="col5 col">
+                            <p style="color: #f60;">￥165</p>
+                        </td>
+                        <td class="col">
+                            <div class="md-trigger col6"  data-modal="modal-1">
+                            <%--<asp:LinkButton ID="LinkButton1" CssClass="col6" runat="server" Style="text-decoration: none">--%>
+                                <div class="btn_yudin">预定</div>
+                                <div class="btn_danbao">
+                                    <span class="btn_dbspan">担保</span>
+                                </div>
+                            <%--</asp:LinkButton>--%>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom_info" border="0">
+                <tbody>
+                    <tr>
+                        <td class="col1 col">
+                            <p>(旗舰店)</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>大床</p>
+                        </td>
+                        <td class="col2 col">
+                            <p style="color: #10a200;">每天单早</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>1人入住</p>
+                        </td>
+                        <td class="col3 col">
+                            <p>可取消</p>
+                        </td>
+                        <td class="col4 col">
+                            <p>立即确认</p>
+                        </td>
+                        <td class="col5 col">
+                            <p style="color: #f60;">￥200</p>
+                        </td>
+                        <td class="col">
+                            <asp:LinkButton ID="LinkButton2" CssClass="col6" runat="server" Style="text-decoration: none">
+                                <div class="btn_yudin">预定</div>
+                                <div class="btn_danbao">
+                                    <span class="btn_dbspan">担保</span>
+                                </div>
+                            </asp:LinkButton>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom_info" border="0">
+                <tbody>
+                    <tr>
+                        <td class="col1 col">
+                            <p>(旗舰店)</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>大床</p>
+                        </td>
+                        <td class="col2 col">
+                            <p style="color: #10a200;">每天双早</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>2人入住</p>
+                        </td>
+                        <td class="col3 col">
+                            <p>不可取消</p>
+                        </td>
+                        <td class="col4 col">
+                            <p>立即确认</p>
+                        </td>
+                        <td class="col5 col">
+                            <p style="color: #f60;">￥200</p>
+                        </td>
+                        <td class="col">
+                            <asp:LinkButton ID="LinkButton3" CssClass="col6" runat="server" Style="text-decoration: none">
+                                <div class="btn_yudin">预定</div>
+                                <div class="btn_danbao">
+                                    <span class="btn_dbspan">担保</span>
+                                </div>
+                            </asp:LinkButton>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <table class="bottom_info" border="0">
+                <tbody>
+                    <tr>
+                        <td class="col1 col">
+                            <p>(旗舰店)</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>大床</p>
+                        </td>
+                        <td class="col2 col">
+                            <p style="color: #10a200;">每天双早</p>
+                        </td>
+                        <td class="col2 col">
+                            <p>2人入住</p>
+                        </td>
+                        <td class="col3 col">
+                            <p>可取消</p>
+                        </td>
+                        <td class="col4 col">
+                            <p>立即确认</p>
+                        </td>
+                        <td class="col5 col">
+                            <p style="color: #f60;">￥230</p>
+                        </td>
+                        <td class="col">
+                            <asp:LinkButton ID="LinkButton4" CssClass="col6" runat="server" Style="text-decoration: none">
+                                <div class="btn_yudin">预定</div>
+                                <div class="btn_danbao">
+                                    <span class="btn_dbspan">担保</span>
+                                </div>
+                            </asp:LinkButton>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <div class="md-modal md-effect-1" id="modal-1">
+                <div class="md-content">
+                    <h3>七瑾大床房</h3>
+                    <div>
+                        <p>This is a modal window.</p>
+                        <ul>
+                            <li><strong>123</strong> 456</li>
+                            <li><strong>789</strong>123</li>
+                            <li><strong>Close:</strong> 666</li>
+                        </ul>
+                        <asp:Button ID="Button1" runat="server" Text="Button" />
+                        <button class="md-close ">Close me!</button>
+                    </div>
+                </div>
+            </div>
+              <div class="md-overlay"></div>
         </div>
-
-
         <script type="text/javascript">
             window.onload = function () {
                 function $(param) {
